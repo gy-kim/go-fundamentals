@@ -27,18 +27,41 @@ func main() {
 
 	*/
 
-	//// Passing by Value
+	/*
+		//// Passing by Value
+		name := "Nigel"              // Name of subscriber
+		course := "Docker Deep Dive" // Course being viewed
+
+		fmt.Println("\nHi", name, "You're currently watching", course)
+
+		changeCourseByValue(course)
+
+		fmt.Println("\nYou are now watching course", course)
+	*/
+
+	/* */
+
+	//// Passing by Reference
 	name := "Nigel"              // Name of subscriber
 	course := "Docker Deep Dive" // Course being viewed
 
 	fmt.Println("\nHi", name, "You're currently watching", course)
 
-	changeCourse(course)
+	changeCourseByReference(&course)
 
 	fmt.Println("\nYou are now watching course", course)
+
 }
 
-func changeCourse(course string) string {
+func changeCourseByReference(course *string) string {
+	*course = "First Look: Native Docker Clustering"
+
+	fmt.Println("\nTrying to change your course to", *course)
+
+	return *course
+}
+
+func changeCourseByValue(course string) string {
 	course = "First Look: Native Docker Clustering"
 
 	fmt.Println("\nTrying to change your course to", course)
