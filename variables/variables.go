@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 // var (
 // 	// name, course string
@@ -42,8 +45,8 @@ func main() {
 	/* */
 
 	//// Passing by Reference
-	name := "Nigel"              // Name of subscriber
-	course := "Docker Deep Dive" // Course being viewed
+	name := os.Getenv("USERNAME") // Name of subscriber
+	course := "Docker Deep Dive"  // Course being viewed
 
 	fmt.Println("\nHi", name, "You're currently watching", course)
 
