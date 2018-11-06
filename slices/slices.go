@@ -24,14 +24,28 @@ func main() {
 
 	*/
 
-	/* */
-	//// Append
-	mySlice := make([]int, 1, 4)
-	fmt.Printf("Length is: %d Capacity is: %d", len(mySlice), cap(mySlice))
+	/*
+		//// Append
+		mySlice := make([]int, 1, 4)
+		fmt.Printf("Length is: %d Capacity is: %d", len(mySlice), cap(mySlice))
 
-	for i := 1; i < 17; i++ {
-		mySlice = append(mySlice, i)
-		fmt.Printf("\nCapacity is: %d", cap(mySlice))
+		for i := 1; i < 17; i++ {
+			mySlice = append(mySlice, i)
+			fmt.Printf("\nCapacity is: %d", cap(mySlice))
+		}
+	*/
+
+	/* */
+	//// Miscellaneous
+	mySlice := []int{1, 2, 3, 4, 5}
+	fmt.Println(mySlice)
+
+	for _, i := range mySlice {
+		fmt.Println("for range loop:", i)
 	}
+
+	newSlice := []int{10, 20, 30}
+	mySlice = append(mySlice, newSlice...)
+	fmt.Println(mySlice)
 
 }
